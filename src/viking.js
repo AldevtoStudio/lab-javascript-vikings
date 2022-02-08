@@ -100,6 +100,7 @@ class War {
     return damage;
   }
 
+  // Refactored attack code.
   unitAttack(IsSaxon) {
     let randomSaxon = this.selectRandomSaxon();
     let randomViking = this.selectRandomViking();
@@ -109,7 +110,9 @@ class War {
       : randomSaxon.receiveDamage(randomViking.strength);
 
     if (IsSaxon && randomViking.health <= 0)
-      this.vikingArmy = this.vikingArmy.filter((viking) => viking !== randomViking);
+      this.vikingArmy = this.vikingArmy.filter(
+        (viking) => viking !== randomViking
+      );
     else if (!IsSaxon && randomSaxon.health <= 0) {
       this.saxonArmy = this.saxonArmy.filter((saxon) => saxon !== randomSaxon);
     }
