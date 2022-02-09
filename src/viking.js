@@ -116,6 +116,8 @@ class War {
     else if (!IsSaxon && randomSaxon.health <= 0) {
       this.saxonArmy = this.saxonArmy.filter((saxon) => saxon !== randomSaxon);
     }
+
+    return damage;
   }
 
   showStatus() {
